@@ -15,7 +15,7 @@ class Subject(models.Model):
 
 class Course(models.Model):
     owner = models.ForeignKey(User,
-                              related_name='courses_created'.title,
+                              related_name='courses_created',
                               on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject,
                                 related_name='courses',
@@ -41,4 +41,3 @@ class Module(models.Model):
 
     def __str__(self):
         return self.title
-
