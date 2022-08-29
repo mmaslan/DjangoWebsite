@@ -1,11 +1,15 @@
-{% load static %}
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
     <head>
         <meta charset="utf-8" />
+        <title>eLearning</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
 
         <!-- Static location -->
-        <link rel="shortcut icon" type="image/png" href="{% static '/blog/favicon.ico' %}"/>
+        <link rel="shortcut icon" type="image/png" href="{% static 'blog/favicon.ico' %}"/>
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +25,14 @@
         <link href="../../../elearning-1.0.0/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
         <!-- Core theme CSS (includes Bootstrap) -->
-        <link rel="stylesheet" type="text/css" href=" {% static '/css/blog.css' %} ">
+        <link rel="stylesheet" type="text/css" href=" {% static '/static/css/blog.css' %} ">
 
         <!-- title --->
         <title>{% block title %}eLearning Platform - Based on Django Framework{% endblock %}</title>
     </head>
 <body>
     <div id="header">
-        <a href="/" class="logo">Educa</a>
+        <a href="/" class="logo">eLearning</a>
         <ul class="menu">
             {% if request.user.is_authenticated %}
             <li><a href="{% url "logout" %}">Sign out</a></li>
@@ -80,7 +84,7 @@
                                 </a>
                             </li>
                         </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Marek Maślany 2022</div>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; M&T 2022</div>
                     </div>
                 </div>
             </div>
