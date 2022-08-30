@@ -32,7 +32,7 @@
     </head>
 <body>
     <div id="header">
-        <a href="/" class="logo">eLearning</a>
+        <a href="/courses/static" class="logo">eLearning</a>
         <ul class="menu">
             {% if request.user.is_authenticated %}
             <li><a href="{% url "logout" %}">Sign out</a></li>
