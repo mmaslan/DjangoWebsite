@@ -1,93 +1,33 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>eLearning</title>
-        <meta content="width=device-width, initial-scale=1.0" name="viewport">
-        <meta content="" name="keywords">
-        <meta content="" name="description">
-
-        <!-- Static location -->
-        <link rel="shortcut icon" type="image/png" href="{% static 'blog/favicon.ico' %}"/>
-
-        <!-- Google Web Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
-
-        <!-- Icon Font Stylesheet -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-        <!-- Libraries Stylesheet -->
-        <link href="../../../elearning-1.0.0/lib/animate/animate.min.css" rel="stylesheet">
-        <link href="../../../elearning-1.0.0/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-        <!-- Core theme CSS (includes Bootstrap) -->
-        <link rel="stylesheet" type="text/css" href=" {% static '/static/css/blog.css' %} ">
-
-        <!-- title --->
-        <title>{% block title %}eLearning Platform - Based on Django Framework{% endblock %}</title>
+        <title>{% block title %}Educa{% endblock %}</title>
+        <link href="{% static "css/base.css" %}" rel="stylesheet">
     </head>
-<body>
-    <div id="header">
-        <a href="/courses/static" class="logo">eLearning</a>
-        <ul class="menu">
-            {% if request.user.is_authenticated %}
-            <li><a href="{% url "logout" %}">Sign out</a></li>
-            {% else %}
-            <li><a href="{% url "login" %}">Sign in</a></li>
-            {% endif %}
-        </ul>
-    </div>
+    <body>
+        <div id="header">
+             <a href="/" class="logo">Educa</a>
+            <ul class="menu">
+                {% if request.user.is_authenticated %}
+                <li><a href="{% url "logout" %}">Sign out</a></li>
+                {% else %}
+                <li><a href="{% url "login" %}">Sign in</a></li>
+                {% endif %}
+            </ul>
+        </div>
     <div id="content">
         {% block content %}
         {% endblock %}
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script>
-        $(document).ready(function() {
-        {% block domready %}
-        {% endblock %}
-        });
-    </script>
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="https://twitter.com">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://facebook.com">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="https://github.com/mmaslan">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; M&T 2022</div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      {% block domready %}
+      {% endblock %}
+    });
+  </script>
+</body>
 </html>
