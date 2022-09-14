@@ -1,14 +1,30 @@
 from django.urls import reverse_lazy
-from django.shortcuts import redirect, get_object_or_404
-from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.views.generic.base import TemplateResponseMixin, View
-from django .contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from .models import Course
 from .forms import ModuleFormSet
 from django.forms.models import modelform_factory
 from django.apps import apps
-from .models import Module, Content
+from django.shortcuts import (
+    redirect,
+    get_object_or_404
+)
+from .models import (
+    Module,
+    Content
+)
+from django.views.generic.base import (
+    TemplateResponseMixin,
+    View
+)
+from django .contrib.auth.mixins import (
+    LoginRequiredMixin,
+    PermissionRequiredMixin
+)
+from django.views.generic import (
+    ListView,
+    CreateView,
+    UpdateView,
+    DeleteView
+)
 
 
 class OwnerMixin(object):
