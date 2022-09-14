@@ -25,6 +25,10 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from braces.views import (
+    CsrfExemptMixin,
+    JSONRequestResponseMixin
+)
 
 
 class OwnerMixin(object):
@@ -168,3 +172,22 @@ class ModuleContentListView(TemplateResponseMixin, View):
                                    course__owner=request.user)
 
         return self.render_to_response({'module': module})
+
+
+class ModelOrderView(CsrfExemptMixin, JSONRequestResponseMixin, View):
+    def post(self, request):
+        for id, order in self.request_json.items():
+            Module.objects.filter(id=id,
+                                  course_owner=request.user).update(order=order)
+            return self.render_json_response({'saved': 'OK'})
+
+
+class ContentOrderView(CsrfExemptMixin, JSONRequestResponseMixin, View):
+    def post(self, request):
+        for id, order in self.request_json.item():
+            Content.objects.filter(id=id,
+                                   module__course__owner=request.user) \
+                                    .update(order=order)
+            return self.render_json_response({'saved': 'OK'})
+
+
