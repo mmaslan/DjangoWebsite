@@ -3,3 +3,4 @@ Django==4.1
 Pillow==9.2.0
 sqlparse==0.4.2
 tzdata==2022.1
+django-braces==1.15.0
