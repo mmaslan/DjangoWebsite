@@ -32,6 +32,7 @@ class Course(models.Model):
                                      blank=True
     )
 
+
     class Meta:
         ordering = ['-created']
 
