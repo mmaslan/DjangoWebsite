@@ -5,3 +5,4 @@ django-braces==1.15.0
 Pillow==9.2.0
 sqlparse==0.4.2
 tzdata==2022.1
+django-embed-video==1.4.5
